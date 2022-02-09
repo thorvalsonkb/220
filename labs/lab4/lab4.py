@@ -1,3 +1,10 @@
+"""
+Kelsey Thorvalson
+lab4.py
+This program creates a greeting card with animation using a loop.
+I certify that this assignment is entirely my own work.
+"""
+
 from graphics import Point, GraphWin, Text, Polygon, Circle, Line
 from time import sleep
 
