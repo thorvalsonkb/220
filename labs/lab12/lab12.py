@@ -42,7 +42,6 @@ def num_digits():
 def hi_lo_game():
     guesses = 0
     rand = randint(1, 100)
-    print(rand)
     while guesses < 7:
         guesses = guesses + 1
         user_in = eval(input('Enter a number from 1 to 100:'))
