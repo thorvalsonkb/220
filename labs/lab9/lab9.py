@@ -5,7 +5,8 @@ Name: <your name goes here – first and last>
 
 
 def build_board():
-    pass
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    return numbers
 
 
 def print_board(board):
@@ -37,27 +38,146 @@ def print_board(board):
 
 
 def is_legal(board, position):
-    pass
+    if board[position] != 'x' or 'o':
+        return True
+    else:
+        return False
 
 
 def fill_spot(board, position, character):
-    pass
+    character.strip().lowercase()
+    board[position] = character
 
 
 def winning_game(board):
-    pass
+    # row 1
+    if board[0] == 'x':
+        if board[1] == 'x':
+            if board[2] == 'x':
+                return True
+    elif board[0] == 'o':
+        if board[1] == 'o':
+            if board[2] == 'o':
+                return True
+    # row 2
+    elif board[3] == 'x':
+        if board[4] == 'x':
+            if board[5] == 'x':
+                return True
+    elif board[3] == 'o':
+        if board[4] == 'o':
+            if board[5] == 'o':
+                return True
+    # row 3
+    elif board[6] == 'x':
+        if board[7] == 'x':
+            if board[8] == 'x':
+                return True
+    elif board[6] == 'o':
+        if board[7] == 'o':
+            if board[8] == 'o':
+                return True
+    # diagonal 1
+    elif board[0] == 'x':
+        if board[4] == 'x':
+            if board[8] == 'x':
+                return True
+    elif board[0] == 'x':
+        if board[4] == 'x':
+            if board[8] == 'x':
+                return True
+    # diagonal 2
+    elif board[2] == 'x':
+        if board[4] == 'x':
+            if board[6] == 'x':
+                return True
+    elif board[2] == 'o':
+        if board[4] == 'o':
+            if board[6] == 'o':
+                return True
+    else:
+        return False
 
 
 def game_over(board):
-    pass
+    for i in range(len(board)):
+        if board.count(i) < 1:
+            return False
+        else:
+            return True
 
 
 def get_winner(board):
-    pass
+    # row 1
+    if board[0] == 'x':
+        if board[1] == 'x':
+            if board[2] == 'x':
+                return 'x'
+    elif board[0] == 'o':
+        if board[1] == 'o':
+            if board[2] == 'o':
+                return 'o'
+    # row 2
+    elif board[3] == 'x':
+        if board[4] == 'x':
+            if board[5] == 'x':
+                return 'x'
+    elif board[3] == 'o':
+        if board[4] == 'o':
+            if board[5] == 'o':
+                return 'o'
+    # row 3
+    elif board[6] == 'x':
+        if board[7] == 'x':
+            if board[8] == 'x':
+                return 'x'
+    elif board[6] == 'o':
+        if board[7] == 'o':
+            if board[8] == 'o':
+                return 'o'
+    # diagonal 1
+    elif board[0] == 'x':
+        if board[4] == 'x':
+            if board[8] == 'x':
+                return 'x'
+    elif board[0] == 'o':
+        if board[4] == 'o':
+            if board[8] == 'o':
+                return 'o'
+    # diagonal 2
+    elif board[2] == 'x':
+        if board[4] == 'x':
+            if board[6] == 'x':
+                return 'x'
+    elif board[2] == 'o':
+        if board[4] == 'o':
+            if board[6] == 'o':
+                return 'o'
+    else:
+        return None
 
 
 def play(board):
-    pass
+    while game_over(board) is False:
+        return True
+    if get_winner(board) == 'x':
+        print("x's win!")
+        user_input = input('would you like to play again?')
+        if user_input[0] == 'y':
+            return True
+        return False
+    elif get_winner(board) == 'o':
+        print("o's win!")
+        user_input = input('would you like to play again?')
+        if user_input[0] == 'y':
+            return True
+        return False
+    else:
+        print('tie')
+        user_input = input('would you like to play again?')
+        if user_input[0] == 'y':
+            return True
+        return False
 
 
 def main():
